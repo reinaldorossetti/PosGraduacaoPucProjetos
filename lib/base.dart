@@ -1,5 +1,5 @@
 void main() {
-  SuvRaiz meuSUV = SuvRaiz("Jeep", "Renegade", 2023, true);
+  Hach meuSUV = Hach("Kwid", "Renault", 2023, 280);
   meuSUV.detalhes();
 }
 
@@ -9,11 +9,10 @@ base class Veiculo {
   int ano;
   Veiculo(this.marca, this.modelo, this.ano);
 
-  // Método abstrato que será implementado nas subclasses
-  // void detalhes();
+  // Método abstrato ao ser adicionado vai falhar a execução. // void detalhes();
 }
 
-final class Carro extends Veiculo {
+base class Carro extends Veiculo {
   Carro(String marca, String modelo, int ano) : super(marca, modelo, ano);
 
   //@override
@@ -22,41 +21,20 @@ final class Carro extends Veiculo {
   }
 }
 
-final class Sedan extends Carro {
+base class Hach implements Carro {
+  @override
+  String marca;
+  @override
+  String modelo;
+  @override
+  int ano;
   int capacidadePortaMalas;
 
-  Sedan(String marca, String modelo, int ano, this.capacidadePortaMalas)
-      : super(marca, modelo, ano);
-
-  //@override
-  void detalhes() {
-    super.detalhes();
-    print("Porta-malas: $capacidadePortaMalas litros");
-  }
-}
-
-final class Hach implements Carro {
-  int capacidadePortaMalas;
-
-  Hach(String marca, String modelo, int ano, this.capacidadePortaMalas)
-      : super(marca, modelo, ano);
-
-  //@override
-  void detalhes() {
-    super.detalhes();
-    print("Porta-malas: $capacidadePortaMalas litros");
-  }
-}
-
-final class SuvRaiz extends Carro {
-  bool tracaoQuatroRodas;
-
-  SuvRaiz(String marca, String modelo, int ano, this.tracaoQuatroRodas)
-      : super(marca, modelo, ano);
+  Hach(this.marca, this.modelo, this.ano, this.capacidadePortaMalas);
 
   @override
   void detalhes() {
-    super.detalhes();
-    print("Tração 4x4: ${tracaoQuatroRodas ? "Sim" : "Não"}");
+    print("Carro (implementado): $marca $modelo, Ano: $ano");
+    print("Porta-malas: $capacidadePortaMalas litros");
   }
 }

@@ -1,6 +1,9 @@
 void main() {
   SuvRaiz meuSUV = SuvRaiz("Jeep", "Renegade", 2023, true);
   meuSUV.detalhes();
+
+  Sedan meuSedan = Sedan("Toyota", "Corolla", 2022, 470);
+  meuSedan.detalhes();
 }
 
 abstract class Veiculo {

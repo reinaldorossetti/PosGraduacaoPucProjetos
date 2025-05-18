@@ -1,19 +1,4 @@
-final class ConfiguracaoVeiculo {
-  final String tipoCombustivel;
-  final int capacidadeTanque;
-  final int potenciaMotor;
-
-  // Construtor
-  ConfiguracaoVeiculo(this.tipoCombustivel, this.capacidadeTanque, this.potenciaMotor);
-
-  // Método para exibir configuração
-  void mostrarConfiguracao() {
-    print("Configuração do Veículo:");
-    print("Combustível: $tipoCombustivel");
-    print("Capacidade do Tanque: $capacidadeTanque litros");
-    print("Potência do Motor: $potenciaMotor HP");
-  }
-}
+import '../lib/final.dart';
 
 final class ConfigCarro extends ConfiguracaoVeiculo{
   ConfigCarro(String tipoCombustivel, int capacidadeTanque, int potenciaMotor) : super(tipoCombustivel, 
@@ -22,7 +7,7 @@ final class ConfigCarro extends ConfiguracaoVeiculo{
   @override
   void mostrarConfiguracao() {
     super.mostrarConfiguracao();
-    print("Esse é uma nova configuração de carro");
+    print("Esse é um carro");
   }
 }
 
