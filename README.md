@@ -1,4 +1,4 @@
-# Projeto Dart - Exemplo de Interface e Classes
+# Trabalho de POO - Pós-graduação PUC-PR - Exemplo de Modificadores de Classes e Mixin.
 
 Este é um projeto Dart que demonstra como criar e utilizar interfaces (`interface class`), classes concretas e herança em Dart, usando exemplos de veículos e carros.
 
