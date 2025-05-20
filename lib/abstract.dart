@@ -10,22 +10,14 @@ abstract class Veiculo {
   String marca;
   String modelo;
   int ano;
+
   Veiculo(this.marca, this.modelo, this.ano);
 
   // Método abstrato que será implementado nas subclasses
   void detalhes();
 }
 
-class Carro extends Veiculo {
-  Carro(String marca, String modelo, int ano) : super(marca, modelo, ano);
-
-  @override
-  void detalhes() {
-    print("Carro: $marca $modelo, Ano: $ano");
-  }
-}
-
-class Sedan extends Carro {
+class Sedan extends Veiculo {
   int capacidadePortaMalas;
 
   Sedan(String marca, String modelo, int ano, this.capacidadePortaMalas)
@@ -37,7 +29,7 @@ class Sedan extends Carro {
   }
 }
 
-class SuvRaiz extends Carro {
+class SuvRaiz extends Veiculo {
   bool tracaoQuatroRodas;
 
   SuvRaiz(String marca, String modelo, int ano, this.tracaoQuatroRodas)
