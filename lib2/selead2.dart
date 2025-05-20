@@ -1,27 +1,35 @@
 import '../lib/selead.dart';
 
 void main() {
-  Carro carro = Carro("Chevrolet", "Onix", 2021);
-  Moto moto = Moto("Suzuki", "GSX", 2020);
+  Hach meuHach = Hach("Jeep", "Renegade", 2023, 240);
+  meuHach.detalhes();
 
-  carro.detalhes();
-  moto.detalhes();
+  Sedan meuSedan = Sedan("Toyota", "Corolla", 2022, 470);
+  meuSedan.detalhes();
 }
 
-class Carro extends Veiculo {
-  Carro(String marca, String modelo, int ano) : super(marca, modelo, ano);
+class Sedan extends Veiculo {
+  int capacidadePortaMalas;
+
+  Sedan(String marca, String modelo, int ano, this.capacidadePortaMalas)
+      : super(marca, modelo, ano);
 
   @override
   void detalhes() {
-    print("Carro: $marca $modelo, Ano: $ano");
+    print("Porta-malas: $capacidadePortaMalas litros");
   }
 }
 
-class Moto extends Veiculo {
-  Moto(String marca, String modelo, int ano) : super(marca, modelo, ano);
+class Hach implements Veiculo {
+  String marca;
+  String modelo;
+  int ano;
+  int capacidadePortaMalas;
 
-  @override
+  Hach(this.marca, this.modelo, this.ano, this.capacidadePortaMalas);
+
   void detalhes() {
-    print("Moto: $marca $modelo, Ano: $ano");
+    print("Carro (implementado): $marca $modelo, Ano: $ano");
+    print("Porta-malas: $capacidadePortaMalas litros");
   }
 }
