@@ -33,7 +33,6 @@ class Sedan extends Carro {
 
   @override
   void detalhes() {
-    super.detalhes();
     print("Porta-malas: $capacidadePortaMalas litros");
   }
 }
@@ -46,7 +45,6 @@ class SuvRaiz extends Carro {
 
   @override
   void detalhes() {
-    super.detalhes();
     print("Tração 4x4: ${tracaoQuatroRodas ? "Sim" : "Não"}");
   }
 }
